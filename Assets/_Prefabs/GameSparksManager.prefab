@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4834641674397060}
   - component: {fileID: 114710340864798014}
   - component: {fileID: 114350508337950246}
-  - component: {fileID: 114780386685883862}
   m_Layer: 0
   m_Name: GameSparksManager
   m_TagString: Untagged
@@ -65,14 +64,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: 700a8852949c36b468dbdb7ad3c048ea, type: 2}
---- !u!114 &114780386685883862
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1231709522167606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 268a3b8a8afcf9b4e87acac0a4ee7792, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
