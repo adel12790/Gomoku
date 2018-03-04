@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio for Mac
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gomoku", "Gomoku.csproj", "{6A80C292-6B75-66B1-6FB1-2B26F114C716}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gomoku.Editor", "Gomoku.Editor.csproj", "{040354ED-14A3-01C2-C085-99EFAA95BA7E}"
