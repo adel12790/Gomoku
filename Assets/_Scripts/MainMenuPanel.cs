@@ -12,7 +12,7 @@ public class MainMenuPanel : MonoBehaviour {
     [SerializeField]
     private Button playButton;
 
-    void Awake()
+    void Start()
     {
         playButton.onClick.AddListener(Play);
         MatchNotFoundMessage.Listener += OnMatchNotFound;
@@ -44,6 +44,7 @@ public class MainMenuPanel : MonoBehaviour {
         request.SetMatchShortCode("QUIZ_BATTLE");
         request.SetSkill(1);
         request.Send(OnMatchmakingSuccess, OnMatchmakingError);
+        Debug.Log("Match Making Request: " + request.JSONString);
     }
 
     private void OnMatchmakingSuccess(MatchmakingResponse response)
@@ -55,7 +56,7 @@ public class MainMenuPanel : MonoBehaviour {
     private void OnMatchmakingError(MatchmakingResponse response)
     {
         UnblockInput();
-        Debug.Log(response.JSONString);
+        Debug.Log("Matching error response: " + response.JSONString);
 
     }
 

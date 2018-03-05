@@ -31,6 +31,7 @@ public class LoginPanel : MonoBehaviour {
         request.SetUserName(userNameInput.text);
         request.SetPassword(passwordInput.text);
         request.Send(OnLoginSuccess, OnLoginError);
+        Debug.Log("Login Request: " + request.JSONString);
     }
 
     private void OnLoginSuccess(AuthenticationResponse response)
@@ -56,6 +57,8 @@ public class LoginPanel : MonoBehaviour {
         request.SetDisplayName(userNameInput.text);
         request.SetPassword(passwordInput.text);
         request.Send(OnRegistrationSuccess, OnRegistrationError);
+        Debug.Log("Login Request: " + request.JSONString);
+
     }
 
     private void OnRegistrationSuccess(RegistrationResponse response)
