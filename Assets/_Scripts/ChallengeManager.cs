@@ -64,6 +64,9 @@ public class ChallengeManager : Singleton<ChallengeManager> {
         CurrentPlayerName = message.Challenge.NextPlayer == HeartsPlayerId ? HeartsPlayerName : SkullsPlayerName;
         Fields = message.Challenge.ScriptData.GetIntList("fields").Cast<PieceType>().ToArray();
         ChallengeStarted.Invoke();
+        Debug.Log("challenge ID: " + challengeID);
+        Debug.Log("Message " + message.JSONString);
+
     }
 
     private void OnChallengeTurnTaken(ChallengeTurnTakenMessage message)
@@ -71,18 +74,24 @@ public class ChallengeManager : Singleton<ChallengeManager> {
         CurrentPlayerName = message.Challenge.NextPlayer == HeartsPlayerId ? HeartsPlayerName : SkullsPlayerName;
         Fields = message.Challenge.ScriptData.GetIntList("fields").Cast<PieceType>().ToArray();
         ChallengeTurnTaken.Invoke();
+        Debug.Log("Message " + message.JSONString);
+
     }
 
     private void OnChallengeWon(ChallengeWonMessage message)
     {
         IsChallengeActive = false;
         ChallengeWon.Invoke();
+        Debug.Log("Message " + message.JSONString);
+
     }
 
     private void OnChallengeLost(ChallengeLostMessage message)
     {
         IsChallengeActive = false;
         ChallengeLost.Invoke();
+        Debug.Log("Message " + message.JSONString);
+
     }
 
     public void Move(int x, int y)
@@ -93,6 +102,8 @@ public class ChallengeManager : Singleton<ChallengeManager> {
         request.SetEventAttribute("X", x);
         request.SetEventAttribute("Y", y);
         request.Send(OnMoveSuccess, OnMoveError);
+        Debug.Log("Move Request: " + request.JSONString);
+
     }
 
     private void OnMoveSuccess(LogChallengeEventResponse response)

@@ -17,6 +17,7 @@ public class Field : MonoBehaviour {
         animator = GetComponent<Animator>();
         ChallengeManager.Instance.ChallengeTurnTaken.AddListener(OnChallengeTurnTaken);
     }
+
     void OnMouseDown()
     {
         ChallengeManager.Instance.Move(x, y);
