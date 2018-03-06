@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4834641674397060}
   - component: {fileID: 114710340864798014}
   - component: {fileID: 114350508337950246}
-  - component: {fileID: 114857900889522382}
   - component: {fileID: 114125077385077062}
   m_Layer: 0
   m_Name: GameSparksManager
@@ -77,34 +76,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: 700a8852949c36b468dbdb7ad3c048ea, type: 2}
---- !u!114 &114857900889522382
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1231709522167606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 133436a428974bd46b6b8cf87bb66526, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ChallengeStarted:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  ChallengeTurnTaken:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  ChallengeWon:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  ChallengeLost:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null

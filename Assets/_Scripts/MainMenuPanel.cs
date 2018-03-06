@@ -12,22 +12,33 @@ public class MainMenuPanel : MonoBehaviour {
     [SerializeField]
     private Button playButton;
 
-    void Start()
+    void Awake()
     {
         playButton.onClick.AddListener(Play);
         MatchNotFoundMessage.Listener += OnMatchNotFound;
         ChallengeStartedMessage.Listener += OnChallengeStarted;
+        ChallengeIssuedMessage.Listener += OnChallengeIssued;
+        MatchFoundMessage.Listener += OnMatchFound;
     }
 
-    void OnDestroy()
+    private void OnMatchFound(MatchFoundMessage obj)
     {
-        ChallengeStartedMessage.Listener -= OnChallengeStarted;
+        LoadingManager.Instance.LoadNextScene();
+        Debug.Log("Match Found: " + obj.JSONString);
+
+    }
+
+    private void OnChallengeIssued(ChallengeIssuedMessage obj)
+    {
+        LoadingManager.Instance.LoadNextScene();
+        Debug.Log("challenge Issued: " + obj.JSONString);
+
     }
 
     private void OnChallengeStarted(ChallengeStartedMessage obj)
     {
         LoadingManager.Instance.LoadNextScene();
-        Debug.Log(obj.JSONString);
+        Debug.Log("challenge started: " + obj.JSONString);
     }
 
     private void OnMatchNotFound(MatchNotFoundMessage obj)
@@ -67,5 +78,12 @@ public class MainMenuPanel : MonoBehaviour {
     private void UnblockInput()
     {
         playButton.interactable = true;
+    }
+
+    void OnDestroy()
+    {
+        ChallengeStartedMessage.Listener -= OnChallengeStarted;
+        ChallengeIssuedMessage.Listener -= OnChallengeIssued;
+        MatchFoundMessage.Listener -= OnMatchFound;
     }
 }
