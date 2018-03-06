@@ -16,7 +16,7 @@ public class ChallengeManager : Singleton<ChallengeManager> {
 
     private string challengeID;
 
-    void Awake()
+    void Start()
     {
         ChallengeStartedMessage.Listener += OnChallengeStartedMessage;
         ChallengeTurnTakenMessage.Listener += OnChallengeTurnTaken;
@@ -116,12 +116,11 @@ public class ChallengeManager : Singleton<ChallengeManager> {
         print(response.Errors.JSON.ToString());
     }
 
-    void OnDestroy()
+    public void clickDebug()
     {
-        ChallengeStartedMessage.Listener -= OnChallengeStartedMessage;
-        ChallengeTurnTakenMessage.Listener -= OnChallengeTurnTaken;
-        ChallengeWonMessage.Listener -= OnChallengeWon;
-        ChallengeLostMessage.Listener -= OnChallengeLost;
-
+        //var data = new GameSparks.Core.GSData();
+        //var obj = new ChallengeStartedMessage(data);
+        ChallengeStartedMessage.Listener(null);
+        Debug.Log("challenge methods: " + ChallengeStartedMessage.Listener.Method);
     }
 }
