@@ -55,58 +55,6 @@ namespace GameSparks.Api.Requests{
 		}			
 	}
 	
-	public class LogEventRequest_MOVE : GSTypedRequest<LogEventRequest_MOVE, LogEventResponse>
-	{
-	
-		protected override GSTypedResponse BuildResponse (GSObject response){
-			return new LogEventResponse (response);
-		}
-		
-		public LogEventRequest_MOVE() : base("LogEventRequest"){
-			request.AddString("eventKey", "MOVE");
-		}
-		public LogEventRequest_MOVE Set_X( long value )
-		{
-			request.AddNumber("X", value);
-			return this;
-		}			
-		public LogEventRequest_MOVE Set_Y( long value )
-		{
-			request.AddNumber("Y", value);
-			return this;
-		}			
-	}
-	
-	public class LogChallengeEventRequest_MOVE : GSTypedRequest<LogChallengeEventRequest_MOVE, LogChallengeEventResponse>
-	{
-		public LogChallengeEventRequest_MOVE() : base("LogChallengeEventRequest"){
-			request.AddString("eventKey", "MOVE");
-		}
-		
-		protected override GSTypedResponse BuildResponse (GSObject response){
-			return new LogChallengeEventResponse (response);
-		}
-		
-		/// <summary>
-		/// The challenge ID instance to target
-		/// </summary>
-		public LogChallengeEventRequest_MOVE SetChallengeInstanceId( String challengeInstanceId )
-		{
-			request.AddString("challengeInstanceId", challengeInstanceId);
-			return this;
-		}
-		public LogChallengeEventRequest_MOVE Set_X( long value )
-		{
-			request.AddNumber("X", value);
-			return this;
-		}			
-		public LogChallengeEventRequest_MOVE Set_Y( long value )
-		{
-			request.AddNumber("Y", value);
-			return this;
-		}			
-	}
-	
 }
 	
 	
